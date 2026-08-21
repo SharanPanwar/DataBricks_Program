@@ -1,0 +1,15 @@
+{
+	"name": "edf-enterprise-intergration",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "195dd78a-c0d0-43a1-9f5f-b9045b777b06",
+		"tenantId": "571a6ae4-5c99-4bfb-8cbe-e1e26f9a4cea"
+	}
+}
