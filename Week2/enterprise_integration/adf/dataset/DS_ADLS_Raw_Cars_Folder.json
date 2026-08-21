@@ -1,0 +1,90 @@
+{
+	"name": "DS_ADLS_Raw_Cars_Folder",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_Raw",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "api/dummyjson/carts",
+				"fileSystem": "raw"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"carts": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"id": {
+								"type": "integer"
+							},
+							"products": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"id": {
+											"type": "integer"
+										},
+										"title": {
+											"type": "string"
+										},
+										"price": {
+											"type": "number"
+										},
+										"quantity": {
+											"type": "integer"
+										},
+										"total": {
+											"type": "number"
+										},
+										"discountPercentage": {
+											"type": "number"
+										},
+										"discountedTotal": {
+											"type": "number"
+										},
+										"thumbnail": {
+											"type": "string"
+										}
+									}
+								}
+							},
+							"total": {
+								"type": "number"
+							},
+							"discountedTotal": {
+								"type": "number"
+							},
+							"userId": {
+								"type": "integer"
+							},
+							"totalProducts": {
+								"type": "integer"
+							},
+							"totalQuantity": {
+								"type": "integer"
+							}
+						}
+					}
+				},
+				"total": {
+					"type": "integer"
+				},
+				"skip": {
+					"type": "integer"
+				},
+				"limit": {
+					"type": "integer"
+				}
+			}
+		}
+	}
+}

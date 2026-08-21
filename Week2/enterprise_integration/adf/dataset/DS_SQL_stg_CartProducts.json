@@ -1,0 +1,68 @@
+{
+	"name": "DS_SQL_stg_CartProducts",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AzureSQL",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "cart_id",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "user_id",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "product_id",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "product_title",
+				"type": "nvarchar"
+			},
+			{
+				"name": "quantity",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "price",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 4
+			},
+			{
+				"name": "line_total",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 4
+			},
+			{
+				"name": "cart_total",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 4
+			},
+			{
+				"name": "ingest_ts",
+				"type": "datetime2",
+				"scale": 3
+			},
+			{
+				"name": "source_file",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "stg_CartProducts"
+		}
+	}
+}
