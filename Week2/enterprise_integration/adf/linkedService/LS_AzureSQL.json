@@ -1,0 +1,14 @@
+{
+	"name": "LS_AzureSQL",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "sql-enterprise-integration.database.windows.net",
+			"database": "sqldb-carts",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SystemAssignedManagedIdentity"
+		}
+	}
+}
