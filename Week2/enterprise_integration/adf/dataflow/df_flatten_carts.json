@@ -82,7 +82,6 @@
 				"          source_file = '') ~> MapColumns",
 				"MapColumns select(mapColumn(",
 				"          id,",
-				"          products,",
 				"          total,",
 				"          discountedTotal,",
 				"          userId,",
@@ -123,7 +122,18 @@
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> SinkStaging"
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          cart_id,",
+				"          user_id,",
+				"          product_id,",
+				"          product_title,",
+				"          quantity,",
+				"          price,",
+				"          line_total,",
+				"          cart_total,",
+				"          ingest_ts",
+				"     )) ~> SinkStaging"
 			]
 		}
 	}
