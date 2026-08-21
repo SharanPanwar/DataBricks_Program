@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "edf-enterprise-intergration"
+		},
+		"LS_ADLS_Raw_properties_typeProperties_url": {
+			"value": "https://stenterpiseint.dfs.core.windows.net/"
+		},
+		"LS_AzureSQL_properties_typeProperties_server": {
+			"value": "sql-enterprise-integration.database.windows.net"
+		},
+		"LS_AzureSQL_properties_typeProperties_database": {
+			"value": "sqldb-carts"
+		},
+		"LS_REST_DummyJSON_properties_typeProperties_url": {
+			"value": "https://dummyjson.com/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
