@@ -37,10 +37,17 @@
 					{
 						"name": "Copy_Carts_To_Raw",
 						"type": "Copy",
-						"dependsOn": [],
+						"dependsOn": [
+							{
+								"activity": "GetWatermark",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
 						"policy": {
 							"timeout": "0.12:00:00",
-							"retry": 0,
+							"retry": 3,
 							"retryIntervalInSeconds": 30,
 							"secureOutput": false,
 							"secureInput": false
@@ -81,6 +88,137 @@
 								"parameters": {}
 							}
 						]
+					},
+					{
+						"name": "FlattenAndLoad",
+						"type": "ExecuteDataFlow",
+						"dependsOn": [
+							{
+								"activity": "Copy_Carts_To_Raw",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataflow": {
+								"referenceName": "df_flatten_carts",
+								"type": "DataFlowReference",
+								"parameters": {},
+								"datasetParameters": {
+									"RawCarts": {},
+									"SinkStaging": {}
+								}
+							},
+							"staging": {},
+							"compute": {
+								"coreCount": 8,
+								"computeType": "General"
+							},
+							"traceLevel": "Fine"
+						}
+					},
+					{
+						"name": "GetWatermark",
+						"type": "Lookup",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 3,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderQuery": "SELECT WatermarkValue\nFROM dbo.ETL_Watermark\nWHERE SourceSystem = 'DummyJSON'\n  AND EntityName = 'Carts'",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"dataset": {
+								"referenceName": "DS_SQL_ETL_Watermark",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						}
+					},
+					{
+						"name": "MergeToCurated",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "FlattenAndLoad",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[usp_MergeCartProducts]"
+						},
+						"linkedServiceName": {
+							"referenceName": "LS_AzureSQL",
+							"type": "LinkedServiceReference"
+						}
+					},
+					{
+						"name": "UpdateWatermark",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "MergeToCurated",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[usp_UpdateWatermark]",
+							"storedProcedureParameters": {
+								"@SourceSystem": {
+									"value": "DummyJSON",
+									"type": "String"
+								},
+								"@EntityName": {
+									"value": "Carts",
+									"type": "String"
+								},
+								"@NewWatermark": {
+									"value": "@utcnow()",
+									"type": "String"
+								}
+							}
+						},
+						"linkedServiceName": {
+							"referenceName": "LS_AzureSQL",
+							"type": "LinkedServiceReference"
+						}
 					}
 				],
 				"policy": {
@@ -90,7 +228,105 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DS_REST_Carts')]",
-				"[concat(variables('factoryId'), '/datasets/DS_ADLS_Raw_JSON')]"
+				"[concat(variables('factoryId'), '/datasets/DS_ADLS_Raw_JSON')]",
+				"[concat(variables('factoryId'), '/dataflows/df_flatten_carts')]",
+				"[concat(variables('factoryId'), '/datasets/DS_SQL_ETL_Watermark')]",
+				"[concat(variables('factoryId'), '/linkedServices/LS_AzureSQL')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_ADLS_Raw_Cars_Folder')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_ADLS_Raw",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "api/dummyjson/carts",
+						"fileSystem": "raw"
+					}
+				},
+				"schema": {
+					"type": "object",
+					"properties": {
+						"carts": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"id": {
+										"type": "integer"
+									},
+									"products": {
+										"type": "array",
+										"items": {
+											"type": "object",
+											"properties": {
+												"id": {
+													"type": "integer"
+												},
+												"title": {
+													"type": "string"
+												},
+												"price": {
+													"type": "number"
+												},
+												"quantity": {
+													"type": "integer"
+												},
+												"total": {
+													"type": "number"
+												},
+												"discountPercentage": {
+													"type": "number"
+												},
+												"discountedTotal": {
+													"type": "number"
+												},
+												"thumbnail": {
+													"type": "string"
+												}
+											}
+										}
+									},
+									"total": {
+										"type": "number"
+									},
+									"discountedTotal": {
+										"type": "number"
+									},
+									"userId": {
+										"type": "integer"
+									},
+									"totalProducts": {
+										"type": "integer"
+									},
+									"totalQuantity": {
+										"type": "integer"
+									}
+								}
+							}
+						},
+						"total": {
+							"type": "integer"
+						},
+						"skip": {
+							"type": "integer"
+						},
+						"limit": {
+							"type": "integer"
+						}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_ADLS_Raw')]"
 			]
 		},
 		{
@@ -139,6 +375,127 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/DS_SQL_ETL_Watermark')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_AzureSQL",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "SourceSystem",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EntityName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "WatermarkValue",
+						"type": "nvarchar"
+					},
+					{
+						"name": "LastRunUtc",
+						"type": "datetime2",
+						"scale": 3
+					},
+					{
+						"name": "RowsExtracted",
+						"type": "bigint",
+						"precision": 19
+					},
+					{
+						"name": "Status",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "ETL_Watermark"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_AzureSQL')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_SQL_stg_CartProducts')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_AzureSQL",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "cart_id",
+						"type": "bigint",
+						"precision": 19
+					},
+					{
+						"name": "user_id",
+						"type": "bigint",
+						"precision": 19
+					},
+					{
+						"name": "product_id",
+						"type": "bigint",
+						"precision": 19
+					},
+					{
+						"name": "product_title",
+						"type": "nvarchar"
+					},
+					{
+						"name": "quantity",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "price",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 4
+					},
+					{
+						"name": "line_total",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 4
+					},
+					{
+						"name": "cart_total",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 4
+					},
+					{
+						"name": "ingest_ts",
+						"type": "datetime2",
+						"scale": 3
+					},
+					{
+						"name": "source_file",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "stg_CartProducts"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_AzureSQL')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/LS_ADLS_Raw')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -182,6 +539,152 @@
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/df_flatten_carts')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "DS_ADLS_Raw_Cars_Folder",
+								"type": "DatasetReference"
+							},
+							"name": "RawCarts"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "DS_SQL_stg_CartProducts",
+								"type": "DatasetReference"
+							},
+							"name": "SinkStaging"
+						}
+					],
+					"transformations": [
+						{
+							"name": "FlattenCarts"
+						},
+						{
+							"name": "FlattenProducts"
+						},
+						{
+							"name": "MapColumns"
+						},
+						{
+							"name": "select1"
+						}
+					],
+					"scriptLines": [
+						"source(output(",
+						"          carts as (id as integer, products as (id as integer, title as string, price as double, quantity as integer, total as double, discountPercentage as double, discountedTotal as double, thumbnail as string)[], total as double, discountedTotal as double, userId as integer, totalProducts as integer, totalQuantity as integer)[],",
+						"          total as integer,",
+						"          skip as integer,",
+						"          limit as integer",
+						"     ),",
+						"     allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     ignoreNoFilesFound: false,",
+						"     documentForm: 'documentPerLine') ~> RawCarts",
+						"RawCarts foldDown(unroll(carts),",
+						"     mapColumn(",
+						"          id = carts.id,",
+						"          products = carts.products,",
+						"          total = carts.total,",
+						"          discountedTotal = carts.discountedTotal,",
+						"          userId = carts.userId,",
+						"          totalProducts = carts.totalProducts,",
+						"          totalQuantity = carts.totalQuantity",
+						"     ),",
+						"     skipDuplicateMapInputs: false,",
+						"     skipDuplicateMapOutputs: false) ~> FlattenCarts",
+						"FlattenCarts foldDown(unroll(products),",
+						"     mapColumn(",
+						"          id,",
+						"          products,",
+						"          total,",
+						"          discountedTotal,",
+						"          userId,",
+						"          totalProducts,",
+						"          totalQuantity",
+						"     ),",
+						"     skipDuplicateMapInputs: false,",
+						"     skipDuplicateMapOutputs: false) ~> FlattenProducts",
+						"FlattenProducts derive(cart_id = id,",
+						"          user_id = userId,",
+						"          product_id = products.id,",
+						"          product_title = products.title,",
+						"          quantity = toInteger(products.quantity),",
+						"          price = toDecimal(products.price, 18, 4),",
+						"          line_total = toDecimal(products.total, 18, 4),",
+						"          cart_total = toDecimal(total, 18, 4),",
+						"          ingest_ts = currentUTC(),",
+						"          source_file = '') ~> MapColumns",
+						"MapColumns select(mapColumn(",
+						"          id,",
+						"          total,",
+						"          discountedTotal,",
+						"          userId,",
+						"          totalProducts,",
+						"          totalQuantity,",
+						"          cart_id,",
+						"          user_id,",
+						"          product_id,",
+						"          product_title,",
+						"          quantity,",
+						"          price,",
+						"          line_total,",
+						"          cart_total,",
+						"          ingest_ts,",
+						"          source_file",
+						"     ),",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true) ~> select1",
+						"select1 sink(allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     input(",
+						"          cart_id as long,",
+						"          user_id as long,",
+						"          product_id as long,",
+						"          product_title as string,",
+						"          quantity as integer,",
+						"          price as decimal(18,4),",
+						"          line_total as decimal(18,4),",
+						"          cart_total as decimal(18,4),",
+						"          ingest_ts as timestamp,",
+						"          source_file as string",
+						"     ),",
+						"     deletable:false,",
+						"     insertable:true,",
+						"     updateable:false,",
+						"     upsertable:false,",
+						"     truncate:true,",
+						"     format: 'table',",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true,",
+						"     errorHandlingOption: 'stopOnFirstError',",
+						"     mapColumn(",
+						"          cart_id,",
+						"          user_id,",
+						"          product_id,",
+						"          product_title,",
+						"          quantity,",
+						"          price,",
+						"          line_total,",
+						"          cart_total,",
+						"          ingest_ts",
+						"     )) ~> SinkStaging"
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/DS_ADLS_Raw_Cars_Folder')]",
+				"[concat(variables('factoryId'), '/datasets/DS_SQL_stg_CartProducts')]"
+			]
 		}
 	]
 }
