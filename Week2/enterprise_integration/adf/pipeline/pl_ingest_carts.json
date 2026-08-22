@@ -161,7 +161,7 @@
 					"storedProcedureName": "[dbo].[usp_UpdateWatermark]",
 					"storedProcedureParameters": {
 						"@SourceSystem": {
-							"value": "DummyJSON",
+							"value": "'DummyJSON'",
 							"type": "String"
 						},
 						"@EntityName": {
