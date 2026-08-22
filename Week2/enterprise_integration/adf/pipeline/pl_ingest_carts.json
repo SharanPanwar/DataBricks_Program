@@ -101,6 +101,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT WatermarkValue\nFROM dbo.ETL_Watermark\nWHERE SourceSystem = 'DummyJSON'\n  AND EntityName = 'Carts'",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -159,8 +160,27 @@
 				"typeProperties": {
 					"storedProcedureName": "[dbo].[usp_UpdateWatermark]",
 					"storedProcedureParameters": {
-						"undefined": {
-							"value": ""
+						"@SourceSystem": {
+							"value": "DummyJSON",
+							"type": "String"
+						},
+						"@EntityName": {
+							"value": "Carts",
+							"type": "String"
+						},
+						"@NewWatermark": {
+							"value": {
+								"value": "@formatDateTime(utcnow(), 'yyyy-MM-ddTHH:mm:ss')",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"@RowsExtracted": {
+							"value": {
+								"value": "@activity('Copy_Carts_To_Raw').output.rowsCopied",
+								"type": "Expression"
+							},
+							"type": "Int64"
 						}
 					}
 				},
