@@ -173,8 +173,7 @@
 							"type": "String"
 						},
 						"@RowsExtracted": {
-							"value": null,
-							"type": "Int64"
+							"value": ""
 						}
 					}
 				},
