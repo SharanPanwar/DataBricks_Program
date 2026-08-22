@@ -165,7 +165,7 @@
 							"type": "String"
 						},
 						"@EntityName": {
-							"value": "Carts",
+							"value": "'Carts'",
 							"type": "String"
 						},
 						"@NewWatermark": {
