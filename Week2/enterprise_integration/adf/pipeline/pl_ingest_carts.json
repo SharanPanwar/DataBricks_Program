@@ -171,9 +171,6 @@
 						"@NewWatermark": {
 							"value": "@utcnow()",
 							"type": "String"
-						},
-						"@RowsExtracted": {
-							"value": null
 						}
 					}
 				},
