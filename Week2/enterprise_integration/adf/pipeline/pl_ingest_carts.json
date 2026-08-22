@@ -169,17 +169,11 @@
 							"type": "String"
 						},
 						"@NewWatermark": {
-							"value": {
-								"value": "@formatDateTime(utcnow(), 'yyyy-MM-ddTHH:mm:ss')",
-								"type": "Expression"
-							},
+							"value": "@utcnow()",
 							"type": "String"
 						},
 						"@RowsExtracted": {
-							"value": {
-								"value": "@activity('Copy_Carts_To_Raw').output.rowsCopied",
-								"type": "Expression"
-							},
+							"value": null,
 							"type": "Int64"
 						}
 					}
