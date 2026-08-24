@@ -208,10 +208,6 @@
 								"@EntityName": {
 									"value": "Carts",
 									"type": "String"
-								},
-								"@NewWatermark": {
-									"value": "@utcnow()",
-									"type": "String"
 								}
 							}
 						},
