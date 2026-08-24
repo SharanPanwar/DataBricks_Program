@@ -201,12 +201,19 @@
 						"typeProperties": {
 							"storedProcedureName": "[[dbo].[usp_UpdateWatermark]",
 							"storedProcedureParameters": {
-								"@SourceSystem": {
+								"SourceSystem": {
 									"value": "DummyJSON",
 									"type": "String"
 								},
-								"@EntityName": {
+								"EntityName": {
 									"value": "Carts",
+									"type": "String"
+								},
+								"NewWatermark": {
+									"value": {
+										"value": "@utcnow()",
+										"type": "Expression"
+									},
 									"type": "String"
 								}
 							}
