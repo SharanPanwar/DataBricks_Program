@@ -1,0 +1,14 @@
+CustomerID,CustomerName,Region,Country,AnnualSales,CustomerTier,RegistrationDate
+C001,Acme Corp,North,USA,125000.50,Gold,2021-03-15
+C002,Beta Industries,South,USA,89000.00,Silver,2022-07-01
+C003,Gamma LLC,East,Canada,156000.75,Gold,2020-11-20
+C004,Delta Foods,West,USA,45200.25,Bronze,2023-01-10
+C005,Echo Systems,North,USA,210500.00,Platinum,2019-05-22
+C006,Foxtrot Retail,South,Mexico,67800.40,Silver,2022-09-18
+C007,Helios Energy,East,USA,98000.00,Gold,2021-12-05
+C008,Iris Biotech,West,Canada,134250.90,Gold,2020-04-30
+C009,Jade Logistics,North,USA,52300.00,Bronze,2023-06-14
+C010,Kappa Motors,South,USA,187600.55,Platinum,2018-08-09
+C001,Acme Corp,North,USA,125000.50,Gold,2021-03-15
+C011,Lumen Soft,East,UK,76400.00,Silver,2022-02-28
+C012,Nova Trade,West,USA,112300.20,Gold,2021-10-11
