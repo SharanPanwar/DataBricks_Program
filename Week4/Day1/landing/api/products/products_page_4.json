@@ -1,0 +1,807 @@
+{
+ "page": 4,
+ "pageSize": 200,
+ "records": [
+  {
+   "productId": "PROD-0801",
+   "productName": "Product 801",
+   "category": "Widgets",
+   "listPrice": 4365.33,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0802",
+   "productName": "Product 802",
+   "category": "Gadgets",
+   "listPrice": 4049.76,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0803",
+   "productName": "Product 803",
+   "category": "Fittings",
+   "listPrice": 4567.33,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0804",
+   "productName": "Product 804",
+   "category": "Consumables",
+   "listPrice": 108.24,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0805",
+   "productName": "Product 805",
+   "category": "Widgets",
+   "listPrice": 219.92,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0806",
+   "productName": "Product 806",
+   "category": "Gadgets",
+   "listPrice": 1672.05,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0807",
+   "productName": "Product 807",
+   "category": "Fittings",
+   "listPrice": 3991.3,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0808",
+   "productName": "Product 808",
+   "category": "Consumables",
+   "listPrice": 3464.51,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0809",
+   "productName": "Product 809",
+   "category": "Widgets",
+   "listPrice": 4626.65,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0810",
+   "productName": "Product 810",
+   "category": "Gadgets",
+   "listPrice": 4515.7,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0811",
+   "productName": "Product 811",
+   "category": "Fittings",
+   "listPrice": 2401.38,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0812",
+   "productName": "Product 812",
+   "category": "Consumables",
+   "listPrice": 2604.83,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0813",
+   "productName": "Product 813",
+   "category": "Widgets",
+   "listPrice": 650.87,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0814",
+   "productName": "Product 814",
+   "category": "Gadgets",
+   "listPrice": 4170.6,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0815",
+   "productName": "Product 815",
+   "category": "Fittings",
+   "listPrice": 393.4,
+   "discontinued": true,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0816",
+   "productName": "Product 816",
+   "category": "Consumables",
+   "listPrice": 1655.25,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0817",
+   "productName": "Product 817",
+   "category": "Widgets",
+   "listPrice": 2277.68,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0818",
+   "productName": "Product 818",
+   "category": "Gadgets",
+   "listPrice": 3075.81,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0819",
+   "productName": "Product 819",
+   "category": "Fittings",
+   "listPrice": 1458.61,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0820",
+   "productName": "Product 820",
+   "category": "Consumables",
+   "listPrice": 2058.62,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0821",
+   "productName": "Product 821",
+   "category": "Widgets",
+   "listPrice": 1011.91,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0822",
+   "productName": "Product 822",
+   "category": "Gadgets",
+   "listPrice": 1681.96,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0823",
+   "productName": "Product 823",
+   "category": "Fittings",
+   "listPrice": 2612.67,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0824",
+   "productName": "Product 824",
+   "category": "Consumables",
+   "listPrice": 285.47,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0825",
+   "productName": "Product 825",
+   "category": "Widgets",
+   "listPrice": 4481.53,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0826",
+   "productName": "Product 826",
+   "category": "Gadgets",
+   "listPrice": 4310.86,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0827",
+   "productName": "Product 827",
+   "category": "Fittings",
+   "listPrice": 4975.2,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0828",
+   "productName": "Product 828",
+   "category": "Consumables",
+   "listPrice": 2902.8,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0829",
+   "productName": "Product 829",
+   "category": "Widgets",
+   "listPrice": 1103.15,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0830",
+   "productName": "Product 830",
+   "category": "Gadgets",
+   "listPrice": 2248.91,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0831",
+   "productName": "Product 831",
+   "category": "Fittings",
+   "listPrice": 3075.31,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0832",
+   "productName": "Product 832",
+   "category": "Consumables",
+   "listPrice": 2346.29,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0833",
+   "productName": "Product 833",
+   "category": "Widgets",
+   "listPrice": 2753.67,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0834",
+   "productName": "Product 834",
+   "category": "Gadgets",
+   "listPrice": 1622.4,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0835",
+   "productName": "Product 835",
+   "category": "Fittings",
+   "listPrice": 3624.3,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0836",
+   "productName": "Product 836",
+   "category": "Consumables",
+   "listPrice": 1787.61,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0837",
+   "productName": "Product 837",
+   "category": "Widgets",
+   "listPrice": 3421.74,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0838",
+   "productName": "Product 838",
+   "category": "Gadgets",
+   "listPrice": 803.3,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0839",
+   "productName": "Product 839",
+   "category": "Fittings",
+   "listPrice": 1539.88,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0840",
+   "productName": "Product 840",
+   "category": "Consumables",
+   "listPrice": 1175.63,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0841",
+   "productName": "Product 841",
+   "category": "Widgets",
+   "listPrice": 1203.77,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0842",
+   "productName": "Product 842",
+   "category": "Gadgets",
+   "listPrice": 2958.58,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0843",
+   "productName": "Product 843",
+   "category": "Fittings",
+   "listPrice": 4440.23,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0844",
+   "productName": "Product 844",
+   "category": "Consumables",
+   "listPrice": 2984.06,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0845",
+   "productName": "Product 845",
+   "category": "Widgets",
+   "listPrice": 2671.14,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0846",
+   "productName": "Product 846",
+   "category": "Gadgets",
+   "listPrice": 3827.57,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0847",
+   "productName": "Product 847",
+   "category": "Fittings",
+   "listPrice": 2042.01,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0848",
+   "productName": "Product 848",
+   "category": "Consumables",
+   "listPrice": 1223.59,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0849",
+   "productName": "Product 849",
+   "category": "Widgets",
+   "listPrice": 1205.51,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0850",
+   "productName": "Product 850",
+   "category": "Gadgets",
+   "listPrice": 4840.5,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0851",
+   "productName": "Product 851",
+   "category": "Fittings",
+   "listPrice": 4575.25,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0852",
+   "productName": "Product 852",
+   "category": "Consumables",
+   "listPrice": 3019.52,
+   "discontinued": true,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0853",
+   "productName": "Product 853",
+   "category": "Widgets",
+   "listPrice": 2102.2,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0854",
+   "productName": "Product 854",
+   "category": "Gadgets",
+   "listPrice": 4036.22,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0855",
+   "productName": "Product 855",
+   "category": "Fittings",
+   "listPrice": 3268.96,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0856",
+   "productName": "Product 856",
+   "category": "Consumables",
+   "listPrice": 3571.83,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0857",
+   "productName": "Product 857",
+   "category": "Widgets",
+   "listPrice": 3733.94,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0858",
+   "productName": "Product 858",
+   "category": "Gadgets",
+   "listPrice": 3815.43,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0859",
+   "productName": "Product 859",
+   "category": "Fittings",
+   "listPrice": 4679.22,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0860",
+   "productName": "Product 860",
+   "category": "Consumables",
+   "listPrice": 2408.89,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0861",
+   "productName": "Product 861",
+   "category": "Widgets",
+   "listPrice": 3221.46,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0862",
+   "productName": "Product 862",
+   "category": "Gadgets",
+   "listPrice": 3288.89,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0863",
+   "productName": "Product 863",
+   "category": "Fittings",
+   "listPrice": 2857.87,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0864",
+   "productName": "Product 864",
+   "category": "Consumables",
+   "listPrice": 4839.45,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0865",
+   "productName": "Product 865",
+   "category": "Widgets",
+   "listPrice": 1276.31,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0866",
+   "productName": "Product 866",
+   "category": "Gadgets",
+   "listPrice": 3043.22,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0867",
+   "productName": "Product 867",
+   "category": "Fittings",
+   "listPrice": 304.71,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0868",
+   "productName": "Product 868",
+   "category": "Consumables",
+   "listPrice": 4968.89,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0869",
+   "productName": "Product 869",
+   "category": "Widgets",
+   "listPrice": 4850.88,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0870",
+   "productName": "Product 870",
+   "category": "Gadgets",
+   "listPrice": 1093.36,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0871",
+   "productName": "Product 871",
+   "category": "Fittings",
+   "listPrice": 4454.06,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0872",
+   "productName": "Product 872",
+   "category": "Consumables",
+   "listPrice": 437.32,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0873",
+   "productName": "Product 873",
+   "category": "Widgets",
+   "listPrice": 1235.81,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0874",
+   "productName": "Product 874",
+   "category": "Gadgets",
+   "listPrice": 4787.96,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0875",
+   "productName": "Product 875",
+   "category": "Fittings",
+   "listPrice": 3104.52,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0876",
+   "productName": "Product 876",
+   "category": "Consumables",
+   "listPrice": 4702.74,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0877",
+   "productName": "Product 877",
+   "category": "Widgets",
+   "listPrice": 4878.77,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0878",
+   "productName": "Product 878",
+   "category": "Gadgets",
+   "listPrice": 3898.62,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0879",
+   "productName": "Product 879",
+   "category": "Fittings",
+   "listPrice": 4450.68,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0880",
+   "productName": "Product 880",
+   "category": "Consumables",
+   "listPrice": 1324.12,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0881",
+   "productName": "Product 881",
+   "category": "Widgets",
+   "listPrice": 4808.14,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0882",
+   "productName": "Product 882",
+   "category": "Gadgets",
+   "listPrice": 517.42,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0883",
+   "productName": "Product 883",
+   "category": "Fittings",
+   "listPrice": 2164.89,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0884",
+   "productName": "Product 884",
+   "category": "Consumables",
+   "listPrice": 2171.01,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0885",
+   "productName": "Product 885",
+   "category": "Widgets",
+   "listPrice": 891.62,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0886",
+   "productName": "Product 886",
+   "category": "Gadgets",
+   "listPrice": 3523.58,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0887",
+   "productName": "Product 887",
+   "category": "Fittings",
+   "listPrice": 203.79,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0888",
+   "productName": "Product 888",
+   "category": "Consumables",
+   "listPrice": 4238.59,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0889",
+   "productName": "Product 889",
+   "category": "Widgets",
+   "listPrice": 2777.88,
+   "discontinued": true,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0890",
+   "productName": "Product 890",
+   "category": "Gadgets",
+   "listPrice": 3306.3,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0891",
+   "productName": "Product 891",
+   "category": "Fittings",
+   "listPrice": 4199.41,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0892",
+   "productName": "Product 892",
+   "category": "Consumables",
+   "listPrice": 4258.45,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0893",
+   "productName": "Product 893",
+   "category": "Widgets",
+   "listPrice": 4589.33,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0894",
+   "productName": "Product 894",
+   "category": "Gadgets",
+   "listPrice": 2757.65,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0895",
+   "productName": "Product 895",
+   "category": "Fittings",
+   "listPrice": 2525.54,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0896",
+   "productName": "Product 896",
+   "category": "Consumables",
+   "listPrice": 4363.02,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0897",
+   "productName": "Product 897",
+   "category": "Widgets",
+   "listPrice": 587.19,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0898",
+   "productName": "Product 898",
+   "category": "Gadgets",
+   "listPrice": 4731.55,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0899",
+   "productName": "Product 899",
+   "category": "Fittings",
+   "listPrice": 3188.78,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  },
+  {
+   "productId": "PROD-0900",
+   "productName": "Product 900",
+   "category": "Consumables",
+   "listPrice": 1363.75,
+   "discontinued": false,
+   "updatedAt": "2026-08-31T08:00:00Z"
+  }
+ ],
+ "nextPage": null
+}
