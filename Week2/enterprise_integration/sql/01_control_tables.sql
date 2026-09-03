@@ -9,4 +9,4 @@ CREATE TABLE dbo.ETL_Watermark (
 );
 
 INSERT INTO dbo.ETL_Watermark (SourceSystem, EntityName, WatermarkValue, LastRunUtc, Status)
-VALUES ('DummyJSON', 'Carts', '0', SYSUTCDATETIME(), 'Success');
+VALUES ('DummyJSON', 'Carts', '0', SYSUTCDATETIME(), 'Success');    
