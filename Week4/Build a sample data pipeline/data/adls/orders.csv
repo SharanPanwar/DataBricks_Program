@@ -1,0 +1,14 @@
+order_id,customer_id,order_date,order_status,total_amount
+O001,C001,2024-07-01,completed,1029.98
+O002,C002,2024-07-02,completed,279.98
+O003,C003,2024-07-03,pending,249.99
+O004,C004,2024-07-05,completed,149.98
+O005,C001,2024-07-10,completed,89.99
+O006,C005,2024-07-12,cancelled,999.99
+O007,C008,2024-07-15,completed,119.98
+O008,C002,2024-07-18,completed,39.99
+O009,C999,2024-07-20,completed,50.00
+O010,C006,07/25/2024,completed,79.99
+O011,C009,2024-07-28,completed,449.99
+O012,C010,2024-08-01,completed,199.99
+O013,C004,2024-08-03,Completed,59.99

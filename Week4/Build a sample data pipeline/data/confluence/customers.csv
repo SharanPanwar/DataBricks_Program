@@ -1,0 +1,11 @@
+customer_id,first_name,last_name,email,country,signup_date
+C001,John,Smith,john.smith@email.com,USA,2024-01-15
+C002,Jane,Doe,jane.doe@email.com,UK,2024-02-20
+C003,Bob,Johnson,bob.j@email.com,USA,2024-03-10
+C004,Alice,Williams,alice.w@email.com,Canada,2024-01-25
+C005,Charlie,Brown,charlie.b@email.com,USA,2024-04-05
+C006,Diana,Prince,,UK,2024-05-12
+C007,John,Smith,john.smith@email.com,USA,2024-01-15
+C008,Eve,Davis,eve.davis@email.com,Australia,2024-06-01
+C009, Frank ,Miller, FRANK.M@EMAIL.COM , germany ,2024-06-15
+C010,Grace,Lee,grace.lee@email.com,India,2024-07-01
