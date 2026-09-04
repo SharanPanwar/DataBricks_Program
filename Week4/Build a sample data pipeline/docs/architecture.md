@@ -14,7 +14,7 @@
                     Unity Catalog · bronze
                               ▼
                     Unity Catalog · silver
-                 (clean + joins → order_lines_enriched)
+                 (clean + joins → order_lines_enriched)s
                               ▼
                     Unity Catalog · gold
                          (aggregates / KPIs)
